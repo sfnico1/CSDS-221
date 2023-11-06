@@ -10,8 +10,8 @@ $('#submit').on('click', function() {
     if (document.getElementById(idNames[9]).value <= 0){
         document.getElementById(idNames[9]).parentElement.classList.add('has-error');
         check = true;
-        if (document.getElementById(idNames[9]).value == 0){
-            toastr.error('The price is 0, please change your check-in/check-out dates.'); 
+        if (isNaN(parseFloat(document.getElementById(idNames[9]).value)) || document.getElementById(idNames[9]).value == ""){
+            toastr.error('The price is has not been calculated, please change your check-in/check-out dates.'); 
         } else {
             toastr.error('The price is negative, please change your check-in/check-out dates.'); // this was required but I made it so this never occurs
         }
