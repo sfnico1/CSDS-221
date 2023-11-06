@@ -1,0 +1,22 @@
+
+.red{
+    color: red;
+}
+
+.error{
+    outline: 2px solid red;
+}
+
+.btnLocation{
+    float: right;
+    padding-right: 5rem;
+    margin-top: -1rem;
+}
+
+.larger{
+    padding: 1.5rem 10rem;
+}
+
+body{
+    margin: 2rem;
+}
