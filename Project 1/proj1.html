@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>
+            CSDS221 - Project 1 - Nico Slavonia
+        </title>
+        <meta >
+        <!-- importing necessary links -->
+        <meta name = "viewport" charset = "utf-8" content = "width = device-width, initial-scale = 1">
+        <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href = "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel = "stylesheet"/>
+        <link rel = "stylesheet" href = "proj1.css">
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script> 
+        <script type = "text/JavaScript" src = "https://MomentJS.com/downloads/moment.js"></script>
+    </head>
+    <body>
+        <!-- all one big fluid container -->
+        <div class = "fluid-container">
+            <h1 class = "red"> 
+                <b> 
+                    Bootstrap Booking Form:
+                </b> 
+            </h1>
+            <div>
+                <!-- well class for the info -->
+                <div class = "well">
+                    Fill out the form and hit the submit button when complete...
+                </div>
+            </div>
+            <form>
+                <!-- all containers are in the same row with the buttons below it. i then break it up into columns and then rows again -->
+                <div class = "row">
+                    <div class = "col-md-6">
+                        <!-- User panel -->
+                        <div class = "panel panel-primary">
+                            <div class = "panel-heading">
+                                User:
+                            </div>
+                            <div class = "panel-body">
+                                <label class = "col-md-2">
+                                    Username:
+                                </label>
+                                <div class = "col-md-10">
+                                    <input class = "form-control" id = "username" type = "text" placeholder = "Type username...">
+                                </div>
+                                <label class = "col-md-2">
+                                    First Name:
+                                </label>
+                                <div class = "col-md-10">
+                                    <input class = "form-control" id = "firstName" type = "text" placeholder = "Type first name...">  
+                                </div>
+                                <label class = "col-md-2">
+                                    Last Name:
+                                </label>
+                                <div class = "col-md-10">
+                                    <input class = "form-control" id = "lastName" type = "text" placeholder = "Type last name...">
+                                </div>                        
+                            </div>
+                        </div>
+                        <!-- contact panel-->
+                        <div class = "panel panel-primary">
+                            <div class = "panel-heading">
+                                Contact:
+                            </div>
+                            <div class = "panel-body">
+                                <div class = "input-group">
+                                    <div class = "input-group-addon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                                        </svg>
+                                    </div>
+                                    <input class = "form-control" id = "phoneNumber" type = "text" placeholder = "Type phone#...">
+                                </div>
+                                <div class = "input-group">
+                                    <div class = "input-group-addon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 512 512">
+                                            <path d="M128 64v96h64V64H386.7L416 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L432 18.7C420 6.7 403.7 0 386.7 0H192c-35.3 0-64 28.7-64 64zM0 160V480c0 17.7 14.3 32 32 32H64c17.7 0 32-14.3 32-32V160c0-17.7-14.3-32-32-32H32c-17.7 0-32 14.3-32 32zm480 32H128V480c0 17.7 14.3 32 32 32H480c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM256 256a32 32 0 1 1 0 64 32 32 0 1 1 0-64zm96 32a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm32 96a32 32 0 1 1 0 64 32 32 0 1 1 0-64zM224 416a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/>
+                                        </svg>
+                                    </div>
+                                    <input class = "form-control" id = "faxNumber" type = "text" placeholder = "Type fax#...">   
+                                </div>
+                                <div class = "input-group">
+                                    <div class = "input-group-addon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                                            <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+                                        </svg>
+                                    </div>
+                                    <input class = "form-control" id = "email" type = "text" placeholder = "Type email...">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- schedule panel -->
+                        <div class = "panel panel-primary">
+                            <div class = "panel-heading">
+                                Schedule:
+                            </div>
+                            <div class = "panel-body">
+                                <div class = "form-group">
+                                    <label>
+                                        Adults:
+                                    </label>
+                                    <select class = "form-control" id = "adults" onchange = "adultsChange();">
+                                        <option value = 1>1</option>
+                                        <option value = 2>2</option>
+                                        <option value = 3>3</option>
+                                        <option value = 4>4</option>
+                                        <option value = 5>5</option>
+                                        <option value = 6>6</option>
+                                        <option value = 7>7</option>
+                                        <option value = 8>8</option>
+                                        <option value = 9>9</option>
+                                        <option value = 10>10</option>
+                                    </select>
+                                </div>
+                                <div class = "row">
+                                    <div class = "col-md-6">
+                                        <label>
+                                            Check-In:
+                                        </label>
+                                        <input class = "form-control" id = "checkIn"  type = "date" max = "" onchange = "checkInChange();">
+                                    </div>
+                                    <div class = "col-md-6">
+                                        <label>
+                                            Check-Out:
+                                        </label>
+                                        <input class = "form-control" id = "checkOut" type = "date" min = "" onchange = "checkOutChange();">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class = "row">
+                                    <div class = "col-md-6">
+                                        <label>
+                                            Days:
+                                        </label>
+                                        <input class = "form-control" id = "days" type = "text" placeholder = "Displays days..."  readonly>
+                                    </div>
+                                    <div class = "col-md-6">
+                                        <label>
+                                            Cost($):
+                                        </label>
+                                        <input class = "form-control" id = "cost" type = "text" placeholder = "Displays cost..."  readonly>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- other 6 columns, message panel -->
+                    <div class = "col-md-6">
+                        <div class = "panel panel-primary">
+                            <div class = "panel-heading">
+                                Other:
+                            </div>
+                            <div class = "panel-body">
+                                <label>
+                                    Message:
+                                </label>
+                                <textarea class = "form-control" id = "message" type = "text" rows = 24 placeholder = "Type message here..." ></textarea>
+                                <br>
+                                <label>
+                                    Range:
+                                </label>
+                                <input id = "range" type = "range" min = "0" max = "10" step = "1" value = 5>
+                                <input id = "low" type = "radio" value = "low" name = "priority" checked>
+                                <label>
+                                    Low &nbsp
+                                </label>
+                                <input id = "med" type = "radio" value = "med" name = "priority">
+                                <label>
+                                    Med &nbsp
+                                </label>
+                                <input id = "high" type = "radio" value = "high" name = "priority">
+                                <label>
+                                    High &nbsp
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!-- buttons on a new row -->
+            <div class = "row btnLocation">
+                <button class = "larger btn btn-primary" onclick = "resetFunc();">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eraser" viewBox="0 0 16 16">
+                        <path d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828l6.879-6.879zm2.121.707a1 1 0 0 0-1.414 0L4.16 7.547l5.293 5.293 4.633-4.633a1 1 0 0 0 0-1.414l-3.879-3.879zM8.746 13.547 3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293l.16-.16z"/>
+                    </svg>
+                    Reset
+                </button>
+                <button class = "larger btn btn-success" onclick = "submitFunc();">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
+                        <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/>
+                    </svg>
+                    Submit
+                </button>
+            </div>
+        </div>
+        <!-- importing the javascript file -->
+        <script src = "proj1.js"></script>
+    </body>
+</html>
+  
