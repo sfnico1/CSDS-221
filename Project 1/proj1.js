@@ -4,7 +4,7 @@ const idNames = ['username', 'firstName', 'lastName', 'phoneNumber', 'faxNumber'
 const names = ['Username', 'First Name', 'Last Name', 'Phone Number', 'Fax Number', 'Email Address', 'Check-In Date', 'Check-Out Date']
 
 // submit function
-function submitFunc(){
+$('#submit').on('click', function() {
     let check = false; // keep track of if an error occured
     // checking the cost first
     if (document.getElementById(idNames[9]).value <= 0){
@@ -31,10 +31,10 @@ function submitFunc(){
     if (check == false){
         toastr.success('This form has been submitted.');
     }
-}
+})
 
 // reset function
-function resetFunc(){
+$('#reset').on('click', function() {
     // clear everything
     for (let i = 0; i < 10; i++){
         document.getElementById(idNames[i]).value = "";
@@ -48,17 +48,18 @@ function resetFunc(){
     document.getElementById("range").value = 5;
     document.getElementById("low").checked = true;
     toastr.info('This form has been reset.');
-}
+})
+
 
 // if the number of adults changes update cost
-function adultsChange(){
+$('#adults').on('change', function() {
     if (document.getElementById("checkIn").value != "" && document.getElementById("checkOut").value != ""){
         document.getElementById("cost").value = document.getElementById("days").value * document.getElementById("adults").value * 150;
     }
-}
+})
 
 // if the check in date changes
-function checkInChange(){
+$('#checkIn').on('change', function() {
     // make sure the user can only check out after they checkin
     document.getElementById("checkOut").min = moment(document.getElementById("checkIn").value, 'YYYY-MM-DD').add(1, 'days').format('YYYY-MM-DD');
     if (document.getElementById("checkOut").value != ""){
@@ -68,10 +69,10 @@ function checkInChange(){
         document.getElementById("days").value = "";
         document.getElementById("cost").value = "";
     }
-}
+})
 
 // if the check out date changes
-function checkOutChange(){
+$('#checkOut').on('change', function() {
     // make sure the user can only check in before they check out
     document.getElementById("checkIn").max = moment(document.getElementById("checkOut").value, 'YYYY-MM-DD').add(-1, 'days').format('YYYY-MM-DD');
     if (document.getElementById("checkIn").value != ""){
@@ -81,6 +82,6 @@ function checkOutChange(){
         document.getElementById("days").value = "";
         document.getElementById("cost").value = "";
     }
-}
+})
 
 
